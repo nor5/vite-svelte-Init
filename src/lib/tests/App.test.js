@@ -1,11 +1,11 @@
 
 import { test } from 'vitest';
 import {render} from "@testing-library/svelte";
-import { APP } from "../APP.sevlte";
-import { fireEvent } from "../../../node_modules/@testing-library/svelte/types/pure";
+import { App } from "../../App.svelte";
+
 export let name;
 test('renders the name prop correctly',async () => {
-    const { getByText } = render(APP);
+    const { getByText } = render(App);
     const incrementbutton = getByText('Count is 0');
     await fireEvent.click(incrementbutton);
     getByText('Count is 1');
